@@ -1,0 +1,26 @@
+page-route-detail {
+    .scroll-content {
+        overflow-y: hidden;
+    }
+    #route-map {
+        height: 40vh;
+        max-height: 320px;
+        width: 100%;
+    }
+    #route-info {
+        overflow-y: auto;
+    }
+    .button-view-type {
+        border-radius: 10px;
+        font-size: .8em;
+        padding: 4px 10px;
+        background-color: cyan;
+        color: black;
+    }
+    .station {
+        padding: 6px;
+    }
+    .station-selected {
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,33 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{mRoute.mCode}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div id="route-map" class="route-map">
+
+    </div>
+
+    <div id="route-info">
+        <div class="a3-container a3-items-center " padding>
+            <div class="a3-flex-1">{{mRoute.mName}}</div>
+            <div class="button-view-type" (click)="onClickToggleView()">
+                {{getViewText()}}
+            </div>
+        </div>
+        <div>
+            <h3>Danh sách điểm dừng</h3>
+            <ul>
+                <li *ngFor="let station of mWaypoint.stations" (click)="onClickStation(station)" class="station" [class.station-selected]="mSelectedStationID==station.id">
+                    {{station.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</ion-content>

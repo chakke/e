@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+    <div id="list-content">
+        <div class="route-container" *ngFor="let route of mRoutes" (click)="onClickRoute(route)">
+            <div class="route-code">{{route.mCode}}</div>
+            <div class="route-name">{{route.mName}}</div>
+        </div>
+    </div>
 </ion-content>
+
+<div *ngIf="mLoadingData" class="loading-view">
+    <div class="a1-container">
+        <div class="a1-container-bottom">
+            <div padding text-center>
+                <ion-spinner name="bubbles"></ion-spinner>
+            </div>
+            <div text-center>
+                Đang tải dữ liệu...
+            </div>
+
+            <div style="height:40px"></div>
+        </div>
+    </div>
+</div>
